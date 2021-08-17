@@ -56,17 +56,20 @@ function changeBalance(type){
     let previousTotalNumber = parseFloat(previousTotal.innerText)
     let userInput = document.getElementById(`${type}-input`);
     let userInputNumber  = parseFloat(userInput.value);
+    
     previousTotal.innerText = previousTotalNumber + userInputNumber;
 
     userInput.value = '';
     const balanceTotal = document.getElementById('balance-total');
     let balanceTotalNumber = parseFloat(balanceTotal.innerText)
     if(userInputNumber <= 0){
+        previousTotal.innerText = 00
         alert('you cannot give empty or negitave value');
     }
     else{
         if(type == 'withdraw'){
             if(userInputNumber > balanceTotalNumber){
+                previousTotal.innerText = 00;
                 alert('insufficient balance')
             }
             else{
