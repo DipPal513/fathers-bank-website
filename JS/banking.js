@@ -69,7 +69,7 @@ function changeBalance(type){
     else{
         if(type == 'withdraw'){
             if(userInputNumber > balanceTotalNumber){
-                previousTotal.innerText = 00;
+                 previousTotal.innerText = '';
                 alert('insufficient balance')
             }
             else{
